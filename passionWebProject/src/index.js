@@ -3,7 +3,7 @@ const path = require('path');
 const ejs = require('ejs');
 const bodyParser = require('body-parser');
 
-const app = express();
+const app = new express();
 const PORT =3000;
 
 const db = require('./config/db');
@@ -13,13 +13,15 @@ const route = require('./routes');
 app.set('view engine','ejs');
 app.set('views', path.join(__dirname,'public/views'));
 
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ type: 'application/json' }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.raw());
 
 //use static file 
 app.use(express.static(path.join(__dirname,"public")));
 
+
+//Connect to database
 db.connect();
 route(app);
 

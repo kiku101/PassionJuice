@@ -1,19 +1,19 @@
-const User = require('../models/User');
 
 class SiteController {
 
-    //[POST] /regist
+    //[GET] /login
+    loginRender(req,res){
+        res.render('login');
+    }
 
-    regist(req,res,next){
-        User.create(req.body, (error, user) => {
-            if (error) {
-                // return res.redirect('/auth/register')
-                console.log("Ok");
-            }
-            console.log('notOK');
-            // res.redirect('/')
-        })
-
+    //[GET] //register
+    registerRender(req,res){
+        res.render('register');
+    }
+    
+    //[GET] /index
+    index(req,res){
+        res.render('index');
     }
 
     
