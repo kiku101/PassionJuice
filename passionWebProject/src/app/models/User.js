@@ -8,24 +8,26 @@ const UserSchema = new Schema({
         required: true,
         unique: true
     },
+    email: {
+        type: String,
+        required: true
+    },
     password: {
         type: String,
         required: true
     },
-    email: {
-        type: String,
-    },
+    
     address:{
         type: String,
     },
-    phoneNumber:{
-        type: String,
-        required: true
-    },
-    birthday:{
-        type: Date,
-        required: true,
-    }
+    // phoneNumber:{
+    //     type: String,
+    //     required: true
+    // },
+    // birthday:{
+    //     type: Date,
+    //     required: true,
+    // }
 });
 
 UserSchema.pre('save', function (next){

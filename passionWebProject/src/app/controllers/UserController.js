@@ -7,7 +7,7 @@ class UserController{
         User.create(req.body, (error, user) => {
             console.log(req.body);
             if (error) {
-                // console.log(error);
+                console.log(error);
                 return res.redirect('/register');
             }
             console.log('OK');

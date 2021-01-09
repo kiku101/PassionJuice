@@ -1,3 +1,4 @@
+const Products = require('../models/Product');
 
 class SiteController {
 
@@ -11,9 +12,15 @@ class SiteController {
         res.render('register');
     }
     
+    
     //[GET] /index
     index(req,res){
-        res.render('index');
+        Products.find({}, (error, pro) => {
+            res.render('index',{
+                products: pro
+            });
+        })
+        
     }
 
     

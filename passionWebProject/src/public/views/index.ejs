@@ -1,19 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('layouts/header'); -%>
-
+<%- include('layouts/header'); -%>
 <body>
     <%- include('layouts/navbar'); -%>
-
     <!-- Page Header -->
-    <h1> HOME PAGE </h1>
+    <div class="container-fluid" style="margin-bottom: 10px;">
+      <div class="row banner">
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="//icms-image.slatic.net/images/ims-web/TB1J2yc58r0gK0jSZFnXXbRRXXa.jpg_1200x1200.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="//icms-image.slatic.net/images/ims-web/TB12iyc58r0gK0jSZFnXXbRRXXa.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="//icms-image.slatic.net/images/ims-web/TB1Jtye58r0gK0jSZFnXXbRRXXa.jpg" class="d-block w-100" alt="...">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </a>
+            </div>
+      </div>
+    </div>
+    <!-- Main Content -->
+    
+    <div class="container" >
+        <div class="row">
+            <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                <div class="khoi">
+                    <h2>LOẠI SẢN PHẨM</h2>
+                  
+                    
+                </div>
+                <div class="list-group">
+                    <button type="button" data-bs-toggle="list" class="list-group-item list-group-item-action active" aria-current="true">
+                      Giày
+                    </button>
+                    <button type="button" data-bs-toggle="list" class="list-group-item list-group-item-action">Đồ Đa Dụng</button>
+                    <button type="button" data-bs-toggle="list" class="list-group-item list-group-item-action">Quần Áo</button>
+                    <button type="button" data-bs-toggle="list" class="list-group-item list-group-item-action">Mỹ Phẩm</button>
+                
+                  </div>
+                <br>
+                <div class="khoi1">
+                    <h2>THƯƠNG HIỆU</h2>
+                    <div class="list-group">
+                        <button type="button" data-bs-toggle="list" class="list-group-item list-group-item-action active" aria-current="true">
+                          Nike
+                        </button>
+                        <button type="button" data-bs-toggle="list" class="list-group-item list-group-item-action">Adidas</button>
+                        <button type="button" data-bs-toggle="list" class="list-group-item list-group-item-action">Jordan</button>
+                        <button type="button" data-bs-toggle="list" class="list-group-item list-group-item-action">Vans</button>
+                    
+                      </div>
+                </div>
+                <br>
+                <div class="khoi2">
+                    <img src="https://salt.tikicdn.com/cache/w150/ts/banner/d9/33/c6/81fe008695bdca829de7470a1f20aa49.png" alt="https://tiki.vn/khuyen-mai/yeu-bep-nghien-nha-giam-den-50-100-chinh-hang">
+                </div>
+    
+            </div>
+            <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                <div class="row">
+                    <h2>SẢN PHẨM</h2>
+                    <div class="row row-cols-1 row-cols-md-3 g-3">
+                        <div class="col">
+                          <div class="card">
+                            <img src="https://giayxshop.vn/wp-content/uploads/2020/12/z2215120606752_f6b76f39d51938da8b8fb9ca9afafb07-scaled.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <a href="" class="card-title">Giày Thể Thao XSPORT Ni.ke Jordan 1 High REP</a>
+                              <p class="card-text">495.000₫</p>
+                              <a href="#" class="btn btn-primary">Thêm giỏ hàng</a>
+                            </div>
+                          </div>
+                        </div> 
 
+                        <div class="col">
+                          <div class="card">
+                            <img src="https://salt.tikicdn.com/cache/280x280/ts/product/34/74/91/1e68e1e2ea72736dcbf55944c8c36a3c.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <a href="" class="card-title">Giày Thể Thao XSPORT Ni.ke Jordan 1 High REP</a>
+                              <p class="card-text">495.000₫</p>
+                              <a href="#" class="btn btn-primary">Thêm giỏ hàng</a>
+                            </div>
+                          </div>
+                      </div> 
+
+                      <div class="col">
+                        <div class="card">
+                          <img src="https://salt.tikicdn.com/cache/280x280/ts/product/34/74/91/1e68e1e2ea72736dcbf55944c8c36a3c.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <a href="" class="card-title">Giày Thể Thao XSPORT Ni.ke Jordan 1 High REP</a>
+                            <p class="card-text">495.000₫</p>
+                            <a href="#" class="btn btn-primary">Thêm giỏ hàng</a>
+                          </div>
+                        </div>
+                    </div> 
+
+                    <div class="col">
+                      <div class="card">
+                        <img src="https://salt.tikicdn.com/cache/280x280/ts/product/34/74/91/1e68e1e2ea72736dcbf55944c8c36a3c.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <a href="" class="card-title">Giày Thể Thao XSPORT Ni.ke Jordan 1 High REP</a>
+                          <p class="card-text">495.000₫</p>
+                          <a href="#" class="btn btn-primary">Thêm giỏ hàng</a>
+                        </div>
+                      </div>
+                  </div> 
+
+                  <div class="col">
+                    <div class="card">
+                      <img src="https://salt.tikicdn.com/cache/280x280/ts/product/34/74/91/1e68e1e2ea72736dcbf55944c8c36a3c.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <a href="" class="card-title">Giày Thể Thao XSPORT Ni.ke Jordan 1 High REP</a>
+                        <p class="card-text">495.000₫</p>
+                        <a href="#" class="btn btn-primary">Thêm giỏ hàng</a>
+                      </div>
+                    </div>
+                </div> 
+                
+    
+                        
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+    
+    <div class="pagination" style="margin-top: 10px"></div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
     <hr>
-
-
-
     <%- include('layouts/footer'); -%>
     <%- include('layouts/scripts'); -%>
+
 </body>
 
-</html>
+

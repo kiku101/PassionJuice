@@ -14,9 +14,9 @@ const ProductSchema = new Schema({
     description:{
         type: String,
     },
-    number: {
-        type: Int,
-    }
+    // number: {
+    //     type: Int,
+    // }
 
 
 })
