@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('layouts/header'); -%>
+
+<body>
+
+    <%- include('layouts/navbar'); -%>
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('/img/contact-bg.jpg')">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="page-heading">
+                        <h1>Register a new account</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <!-- for browser to know tha tthe form contains mutli media. will encripy multie media and send to server -->
+                <form action="/user/register" method="POST" >
+                    <div class="panel-heading">
+                        <h2 class="text-center">Registation Form - Input User's Detail Information</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                          <label for="usr">User Name:</label>
+                          <input required="true" type="text" class="form-control" id="usr" placeholder="User Name" 
+                          name="username">
+                        </div>
+                        <div class="form-group">
+                          <label for="email">Email:</label>
+                          <input required="true" type="email" class="form-control" id="email" placeholder="Email" 
+                          name="email">
+                        </div>
+                        <!-- <div class="form-group">
+                          <label for="birthday">Birthday:</label>
+                          <input type="date" class="form-control" id="birthday" name="birthday">   
+                        </div> -->
+                        <div class="form-group">
+                          <label for="pwd">Password:</label>
+                          <input required="true" type="password" class="form-control" id="pwd" placeholder="Password" 
+                          name="password" >
+                        </div>
+                        <!-- <div class="form-group">
+                          <label for="confirmation_pwd">Confirmation Password:</label>
+                          <input required="true" type="password" class="form-control" id="confirmation_pwd" placeholder="Confirmation Password" 
+                          name="confirmation_pwd">
+                        </div> -->
+                        <div class="form-group">
+                          <label for="address">Address:</label>
+                          <input type="text" class="form-control" id="address" placeholder="Address" 
+                          name="address">
+                        </div>
+                        <br>
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Register</button>
+                        </div>
+                        
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <%- include('layouts/footer'); -%>
+    <%- include('layouts/scripts'); -%>
+
+</body>
+
+</html>

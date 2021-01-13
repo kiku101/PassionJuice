@@ -1,6 +1,7 @@
 const express = require('express');
 const  { model } = require('mongoose');
 const router = express.Router();
+const verify = require('../app/auth/checkToken');
 
 const siteController = require('../app/controllers/SiteController');
 

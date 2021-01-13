@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.container
+{
+    
+   
+    text-align: center;
+  
+    margin: auto;
+}
+
+.sp1 {
+
+    width: 100%;
+    height: 100px;
+}
+.khoi1 {
+    text-align: center;
+
+}
+.button {
+    border: none;
+}
