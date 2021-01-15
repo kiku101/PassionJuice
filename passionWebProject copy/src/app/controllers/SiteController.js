@@ -6,9 +6,9 @@ const Products = require('../models/Product');
 class SiteController {
 
     //[GET] /login
-    loginRender(req,res){
-        res.render('login');
-    }
+    // loginRender(req,res){
+    //     res.render('login');
+    // }
 
     //[GET] //register
     // registerRender(req,res){
@@ -18,11 +18,7 @@ class SiteController {
     
     //[GET] /index
     index(req,res){
-        Products.find({}, (error, pro) => {
-            res.render('index',{
-                products: pro
-            });
-        })
+         res.render('index')
         
     }
 

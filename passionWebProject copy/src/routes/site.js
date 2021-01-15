@@ -1,20 +1,32 @@
 const express = require('express');
-const  { model } = require('mongoose');
+const { model } = require('mongoose');
 const router = express.Router();
-const verify = require('../app/auth/checkToken');
-// const csrf = require('csurf');
+const passport = require('passport')
+const Product = require('../app/models/Product');
 
+router.get('/:page', function(req, res, next) {
+    var perPage = 4
+    var page = req.params.page || 1
+ 
+    Product
+        .find({})
+        .skip((perPage * page) - perPage)
+        .limit(perPage)
+        .exec(function(err, products) {
+            Product.count().exec(function(err, count) {
+                if (err) return next(err)
+                res.render('index', {
+                    products: products,
+                    current: page,
+                    pages: Math.ceil(count / perPage)
+                })
+            })
+        })
+})
 
+router.get('/', (req,res,next) =>{
+    res.redirect('/1');
+});
 
-// const csfProtection = csrf();
-// router.use(csfProtection());
-
-const siteController = require('../app/controllers/SiteController');
-
-router.get('/login',siteController.loginRender);
-
-// router.get('/register',csfProtection,siteController.registerRender);
-
-router.get('/',siteController.index);
 
 module.exports = router;

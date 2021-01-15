@@ -76,71 +76,27 @@
                 <div class="row">
                     <h2>SẢN PHẨM</h2>
                     <div class="row row-cols-1 row-cols-md-3 g-3">
-                        <div class="col">
-                          <div class="card">
-                            <img src="https://giayxshop.vn/wp-content/uploads/2020/12/z2215120606752_f6b76f39d51938da8b8fb9ca9afafb07-scaled.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <a href="" class="card-title">Giày Thể Thao XSPORT Ni.ke Jordan 1 High REP</a>
-                              <p class="card-text">495.000₫</p>
-                              <a href="#" class="btn btn-primary">Thêm giỏ hàng</a>
-                            </div>
-                          </div>
-                        </div> 
 
-                        <div class="col">
+                        <% for (var i = 0; i < products.length; i++) { %>
+                          <div class="col">
                           <div class="card">
-                            <img src="https://salt.tikicdn.com/cache/280x280/ts/product/34/74/91/1e68e1e2ea72736dcbf55944c8c36a3c.jpg" class="card-img-top" alt="...">
+                            <img src="<%= products[i].imageURL %>" class="card-img-top" alt="...">
                             <div class="card-body">
-                              <a href="" class="card-title">Giày Thể Thao XSPORT Ni.ke Jordan 1 High REP</a>
-                              <p class="card-text">495.000₫</p>
+                              <a href="" class="card-title"><%= products[i].productName %></a>
+                              <p class="card-text"><%= products[i].price %>₫</p>
                               <a href="#" class="btn btn-primary">Thêm giỏ hàng</a>
                             </div>
                           </div>
                       </div> 
-
-                      <div class="col">
-                        <div class="card">
-                          <img src="https://salt.tikicdn.com/cache/280x280/ts/product/34/74/91/1e68e1e2ea72736dcbf55944c8c36a3c.jpg" class="card-img-top" alt="...">
-                          <div class="card-body">
-                            <a href="" class="card-title">Giày Thể Thao XSPORT Ni.ke Jordan 1 High REP</a>
-                            <p class="card-text">495.000₫</p>
-                            <a href="#" class="btn btn-primary">Thêm giỏ hàng</a>
-                          </div>
-                        </div>
-                    </div> 
-
-                    <div class="col">
-                      <div class="card">
-                        <img src="https://salt.tikicdn.com/cache/280x280/ts/product/34/74/91/1e68e1e2ea72736dcbf55944c8c36a3c.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <a href="" class="card-title">Giày Thể Thao XSPORT Ni.ke Jordan 1 High REP</a>
-                          <p class="card-text">495.000₫</p>
-                          <a href="#" class="btn btn-primary">Thêm giỏ hàng</a>
-                        </div>
-                      </div>
-                  </div> 
-
-                  <div class="col">
-                    <div class="card">
-                      <img src="https://salt.tikicdn.com/cache/280x280/ts/product/34/74/91/1e68e1e2ea72736dcbf55944c8c36a3c.jpg" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <a href="" class="card-title">Giày Thể Thao XSPORT Ni.ke Jordan 1 High REP</a>
-                        <p class="card-text">495.000₫</p>
-                        <a href="#" class="btn btn-primary">Thêm giỏ hàng</a>
-                      </div>
-                    </div>
-                </div> 
-                
-    
-                        
+                        <% } %>         
                     </div>
                 </div>  
             </div>
         </div>
     </div>
     
-    <div class="pagination" style="margin-top: 10px"></div>
-    <nav aria-label="Page navigation example">
+
+    <!-- <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
           <li class="page-item disabled">
             <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
@@ -152,7 +108,37 @@
             <a class="page-link" href="#">Next</a>
           </li>
         </ul>
-      </nav>
+       --> 
+      <% if (pages > 0) { %>
+        <nav aria-label="Page navigation example"></nav>
+          <ul class="pagination justify-content-center">
+              <% if (current == 1) { %>
+                  <li class="disabled"><a>First</a></li>
+              <% } else { %>
+                  <li><a href="/1">First</a></li>
+              <% } %>
+              <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
+              <% if (i !== 1) { %>
+                  <li class="disabled"><a>...</a></li>
+              <% } %>
+              <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
+                  <% if (i == current) { %>
+                      <li class="active"><a><%= i %></a></li>
+                  <% } else { %>
+                      <li><a href="/<%= i %>"><%= i %></a></li>
+                  <% } %>
+                  <% if (i == Number(current) + 4 && i < pages) { %>
+                      <li class="disabled"><a>...</a></li>
+                  <% } %>
+              <% } %>
+              <% if (current == pages) { %>
+                  <li class="disabled"><a>Last</a></li>
+              <% } else { %>
+                  <li><a href="/<%= pages %>">Last</a></li>
+              <% } %>
+          </ul>
+        </nav>
+    <% } %>
     </div>
     <hr>
     <%- include('layouts/footer'); -%>
