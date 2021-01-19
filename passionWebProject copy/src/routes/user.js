@@ -3,13 +3,17 @@ const { model } = require('mongoose');
 const router = express.Router();
 const passport = require('passport')
 const csrf = require('csurf')
+const path = require('path');
+const Product = require('../app/models/Product');
 
 const csfProtection = csrf();
 router.use(csfProtection);
 
-router.get('/detailproduct',isLoggedIn, (req,res,next) => {
-    res.render('createProduct');
+router.get('/create',csfProtection,isLoggedIn, (req,res,next) => {
+    res.render('createProduct',{csrfToken: req.csrfToken()});
 });
+
+
 
 router.get('/logout',isLoggedIn, (req,res,next) => {
     req.logOut();
@@ -42,6 +46,7 @@ router.post('/register', passport.authenticate('local.sigup', {
     failureRedirect: '/register',
     failureFlash: true
 }));
+
 
 
 

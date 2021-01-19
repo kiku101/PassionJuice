@@ -32,9 +32,8 @@
                     </div>
                     <%if (hasErrors) { %>
                         <div class="alert alert-danger">
-                          <p>hello</p>
                           <% for (var i = 0; i < messages.length; i++) { %>
-                            <p><%= messages %> </p>
+                            <p><%= messages[i] %> </p>
                           <% } %>
                         </div>
                       <% } %>
